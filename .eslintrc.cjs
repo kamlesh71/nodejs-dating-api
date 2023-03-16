@@ -18,12 +18,28 @@ module.exports = {
 		'project': './tsconfig.json',
 	},
 	'plugins': [
-		'@typescript-eslint'
+		'@typescript-eslint', 'import'
 	],
 	"rules": {
+		"import/order": [
+			"error",
+			{
+			  "groups": [
+				"builtin",
+				"external",
+				"internal",
+				"parent",
+				"sibling",
+				"index",
+				"object",
+				"type"
+			  ]
+			}
+		],
+		"@typescript-eslint/no-misused-promises": "off",
+		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/ban-types": "off",
-		"@typescript-eslint/no-namespace": 'off',
-		"@typescript-eslint/no-unsafe-assignment": 'off',
-		"@typescript-eslint/no-misused-promises": 'off',
+		"@typescript-eslint/no-unsafe-member-access": 'off',
+		"@typescript-eslint/no-namespace": "off",
 	}
 };

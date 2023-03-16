@@ -5,16 +5,16 @@ const boot = async () => {
   try {
     mongoose.set('strictQuery', true);
 
-    await mongoose.connect(
-      'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2/dating',
-    );
+    await mongoose.connect(`${process.env.MONGO_URL}/dating`);
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error(error);
   }
 
-  app.listen(3000, () => {
-    console.log('App running on port 3000');
+  const PORT = process.env.PORT ?? 3000;
+
+  app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}`);
   });
 };
 
