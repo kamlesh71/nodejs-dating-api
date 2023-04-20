@@ -4,9 +4,10 @@ import { CustomError } from '@/errors/custom-error';
 
 export const errorHandler = (
   error: Error,
-  _1: Request,
+  _req: Request,
   res: Response,
-  _2: NextFunction,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _next: NextFunction,
 ) => {
   if (error instanceof CustomError) {
     return res.status(error.statusCode).send(error.serializeErrors());
