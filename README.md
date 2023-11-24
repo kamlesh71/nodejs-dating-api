@@ -11,7 +11,7 @@ This project is a robust boilerplate for a Node.js project using Express, Mongoo
 
 1. Clone the project repository:
 ```bash
-git clone https://github.com/kamlesh71/nodejs-dating-api/tree/main/src
+git clone https://github.com/kamlesh71/nodejs-dating-api
 ```
 
 2. Install the project dependencies:
